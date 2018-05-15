@@ -22,7 +22,7 @@ class user_wechatModel extends Model {
      * 插入功能，把登录过的用户数据存到数据库当中
      * 
      * @param 要插入的数据的数组形式
-     * @return boolean 返回插入的状态和对应的id
+     * @return int 返回插入的状态和对应的id
      */
     public function in_user($userData){
 
