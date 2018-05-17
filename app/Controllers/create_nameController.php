@@ -1,8 +1,8 @@
 <?php
-namespace app\controllers;
+namespace app\Controllers;
 
 use fastFrame\base\Controller;
-use app\models\create_nameModel;
+use app\Models\Create_nameModel;
 use usefunction\create_name;
 
 

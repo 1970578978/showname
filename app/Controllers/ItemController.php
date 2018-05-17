@@ -1,8 +1,8 @@
 <?php
-namespace app\controllers;
+namespace app\Controllers;
 
 use fastFrame\base\Controller;
-use app\models\ItemModel;
+use app\Models\ItemModel;
  
 class ItemController extends Controller
 {

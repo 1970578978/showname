@@ -1,8 +1,8 @@
 <?php
-namespace app\controllers;
+namespace app\Controllers;
 
 use fastFrame\base\Controller;
-use app\models\user_wechatModel;
+use app\Models\User_wechatModel;
 use usefunction\openidWay;
 
 /**

@@ -70,7 +70,7 @@ class Fastphp
         // 判断控制器和操作是否存在
         
         $controller = 'app\\Controllers\\'. $controllerName . 'Controller';
-     echo CORE_PATH.'<br>';
+     
         if (!class_exists($controller)) {
             exit($controller . '控制器不存在');
         }
