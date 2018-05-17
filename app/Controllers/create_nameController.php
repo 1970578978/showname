@@ -10,7 +10,7 @@ use usefunction\create_name;
  * 创建签到实列接口控制器
  * 包含创建方法create
  */
-class create_nameController extends Controller {
+class Create_nameController extends Controller {
     
     /**
      * 建立签到实列方法

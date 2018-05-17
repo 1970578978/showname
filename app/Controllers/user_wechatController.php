@@ -9,7 +9,7 @@ use usefunction\openidWay;
  * 建立用户变的接口控制器
  * 包含用openid创建方法用户方法 in_openid
  */
-class user_wechatController extends Controller {
+class User_wechatController extends Controller {
 
     /**
      * 获取openid插入数据并返回状态信息的方法

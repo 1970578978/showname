@@ -9,7 +9,7 @@ use usefunction\checked;
  * 签到接口控制器
  * 实现签到记录方法
  */
-class checkedController extends Controller {
+class CheckedController extends Controller {
     /**
      * 实现签到记录的方法
      * 
