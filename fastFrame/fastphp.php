@@ -69,7 +69,7 @@ class Fastphp
 
         // 判断控制器和操作是否存在
         
-        $controller = 'app'.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR. $controllerName . 'Controller';
+        $controller = 'app'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. $controllerName . 'Controller';
        
         if (!class_exists($controller)) {
             exit($controller . '控制器不存在');
@@ -164,7 +164,7 @@ class Fastphp
             $file = $classMap[$className];
         } elseif (true) {
             // 包含应用（application目录）文件
-            $file = APP_PATH . str_replace('\\', '/', $className) . '.php';
+            $file = APP_PATH . $className . '.php';var_dump($file);
             if (!is_file($file)) {
                 return;
             }
