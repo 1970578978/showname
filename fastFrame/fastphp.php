@@ -164,7 +164,7 @@ class Fastphp
             $file = $classMap[$className];
         } elseif (true) {
             // 包含应用（application目录）文件
-            $file = APP_PATH . str_replace("\\", "/", $className).'.php';var_dump($file);
+            $file = APP_PATH . str_replace("\\", "/", $className).'.php';
             if (!is_file($file)) {
                 return;
             }
