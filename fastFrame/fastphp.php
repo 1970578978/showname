@@ -69,8 +69,8 @@ class Fastphp
 
         // 判断控制器和操作是否存在
         
-        $controller = 'app'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR. $controllerName . 'Controller';
-       
+        $controller = 'app\\Controllers\\'. $controllerName . 'Controller';
+     echo CORE_PATH.'<br>';  $file = APP_PATH . $controller .'.php';var_dump($file) ;include($file);
         if (!class_exists($controller)) {
             exit($controller . '控制器不存在');
         }
@@ -164,7 +164,7 @@ class Fastphp
             $file = $classMap[$className];
         } elseif (true) {
             // 包含应用（application目录）文件
-            $file = APP_PATH . $className . '.php';var_dump($file);
+            $file = APP_PATH . str_replace("\\", "/", $className).'.php';var_dump($file);
             if (!is_file($file)) {
                 return;
             }
@@ -181,11 +181,11 @@ class Fastphp
     protected function classMap()
     {
         return [
-            'fastFrame/base/Controller' => CORE_PATH . '/base/Controller.php',
-            'fastFrame/base/Model' => CORE_PATH . '/base/Model.php',
-            'fastFrame/base/View' => CORE_PATH . '/base/View.php',
-            'fastFrame/db/Db' => CORE_PATH . '/db/Db.php',
-            'fastFrame/db/Sql' => CORE_PATH . '/db/Sql.php',
+            'fastFrame\base\Controller' => CORE_PATH . '/base/Controller.php',
+            'fastFrame\base\Model' => CORE_PATH . '/base/Model.php',
+            'fastFrame\base\View' => CORE_PATH . '/base/View.php',
+            'fastFrame\db\Db' => CORE_PATH . '/db/Db.php',
+            'fastFrame\db\Sql' => CORE_PATH . '/db/Sql.php',
         ];
     }
 }
