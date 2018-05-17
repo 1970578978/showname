@@ -32,14 +32,14 @@ class user_wechatModel extends Model {
 
         if(empty($is_insert)){
 
-            $in_data = array("wechat_num"=>$userData['openid'],"session_key"=>$userData['session_key']);
+            $in_data = array("wechat_num"=>$userData['openid'],"session_key"=>$userData['session_key'],"avatar"=>$userData['avatar']);
 
             //调用继承了的插入方法
             return $this->insert($this->table,$in_data);
         }else{
 
-            //不为空（数据已经在数据库里面）就更改session——key
-            $u_arr = array("session_key"=>$userData['session_key']);
+            //不为空（数据已经在数据库里面）就更改session——key 和头像链接
+            $u_arr = array("session_key"=>$userData['session_key'],"avatar"=>$userData['avatar']);
             $u_where = array("id"=>$is_insert[0]['id']);
 
             $this->update($this->table,$u_arr,$u_where);

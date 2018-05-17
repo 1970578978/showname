@@ -54,7 +54,7 @@ class create_name {
      * @param $p_lat 签到者的纬度
      * @return 规范就返回数据组合的数组方便插进数据库，不规范就返回errMsg
      */
-    public function check_data($p_id,$p_in,$p_num,$p_long,$p_lat){
+    public function check_data($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat){
         $r_checkmsg = array();
 
         //检测id参数
@@ -67,9 +67,16 @@ class create_name {
 
         //检测说明的位数
         if(mb_strlen($p_in)>20){
-            $r_checkmsg['errMsg'][1] = '填写说明超过20个字';
+            $r_checkmsg['errMsg'][1] = '填写课程超过20个字';
         }else{
             $r_checkmsg['instructions'] = $p_in;
+        }
+
+        //检测详情的参数
+        if(mb_strlen($p_det)>50){
+            $r_checkmsg['errMsg'][5] = '填写的说明超过50个字';
+        }else{
+            $r_checkmsg['details'] = $p_det;
         }
 
         //检测应到人数的参数
@@ -83,13 +90,13 @@ class create_name {
         $long = explode(".",$p_long);
         $lat = explode(".",$p_lat);
 
-        if(strlen($long[1])<=3 && !is_float($p_long)){
+        if(strlen($long[1])<3 && !is_float($p_long)){
             $r_checkmsg['errMsg'][3] = '经度参数不够精确或者不是经度';
         }else{
             $r_checkmsg['longitude'] = $p_long;
         }
 
-        if(strlen($lat[1])<=3 && !is_float($p_lat)){
+        if(strlen($lat[1])<3 && !is_float($p_lat)){
             $r_checkmsg['errMsg'][4] = '纬度参数不够精确或者不是纬度';
         }else{
             $r_checkmsg['latitude'] = $p_lat;

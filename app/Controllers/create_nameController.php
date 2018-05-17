@@ -12,8 +12,18 @@ use usefunction\create_name;
  */
 class create_nameController extends Controller {
     
-    //建立签到实列方法
-    public function create($p_id,$p_in,$p_num,$p_long,$p_lat){
+    /**
+     * 建立签到实列方法
+     * 
+     * @param $p_id 用户id
+     * @param $p_in 签到描述
+     * @param $P_num 签到应到人数
+     * @param $p_long 发起签到经度
+     * @param $p_lat 发起签到者纬度
+     * 
+     * @return 正常输出实列id 签到口令和状态码
+     */
+    public function create($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat){
         
         $r_msg = array();
         //url偏码问题
@@ -24,10 +34,11 @@ class create_nameController extends Controller {
         $creM_obj = new create_nameModel;
 
         //检测参数格式是不是正确
-        $ic_checkmsg = $cre_obj->check_data($p_id,$p_in,$p_num,$p_long,$p_lat);
+        $ic_checkmsg = $cre_obj->check_data($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat);
 
         if(array_key_exists('errMsg',$ic_checkmsg)){
             //存在错误就输出来并终止程序的运行
+            $ic_checkmsg['errMsg']['isok'] = false;
             $this->output($ic_checkmsg['errMsg']);
             die;
         }
@@ -83,12 +94,12 @@ class create_nameController extends Controller {
 
         //检测是否创建成功
         if(is_numeric($name_id)){
-            $r_msg['isok'] = true;
             $r_msg['name_id'] = $name_id;
             $r_msg['password'] = $name_password;
+            $r_msg['isok'] = true;
         }else{
-            $r_msg['isok'] = false;
             $r_msg['errmsg'] = '创建失败';
+            $r_msg['isok'] = false;
         }
 
         $this->output($r_msg);
