@@ -69,7 +69,7 @@ class Fastphp
 
         // 判断控制器和操作是否存在
         
-        $controller = 'app\\controllers\\'. $controllerName . 'Controller';
+        $controller = 'app'.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR. $controllerName . 'Controller';
         if (!class_exists($controller)) {
             exit($controller . '控制器不存在');
         }
@@ -180,11 +180,11 @@ class Fastphp
     protected function classMap()
     {
         return [
-            'fastFrame\base\Controller' => CORE_PATH . '/base/Controller.php',
-            'fastFrame\base\Model' => CORE_PATH . '/base/Model.php',
-            'fastFrame\base\View' => CORE_PATH . '/base/View.php',
-            'fastFrame\db\Db' => CORE_PATH . '/db/Db.php',
-            'fastFrame\db\Sql' => CORE_PATH . '/db/Sql.php',
+            'fastFrame/base/Controller' => CORE_PATH . '/base/Controller.php',
+            'fastFrame/base/Model' => CORE_PATH . '/base/Model.php',
+            'fastFrame/base/View' => CORE_PATH . '/base/View.php',
+            'fastFrame/db/Db' => CORE_PATH . '/db/Db.php',
+            'fastFrame/db/Sql' => CORE_PATH . '/db/Sql.php',
         ];
     }
 }
