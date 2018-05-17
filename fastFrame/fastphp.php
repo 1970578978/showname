@@ -22,8 +22,8 @@ class Fastphp
     {
         spl_autoload_register(array($this, 'loadClass'));
         $this->setReporting();
-        $this->removeMagicQuotes();
-        $this->unregisterGlobals();
+        //$this->removeMagicQuotes();
+        //$this->unregisterGlobals();
         $this->setDbConfig();
         $this->route();
     }

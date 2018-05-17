@@ -11,7 +11,7 @@ class ItemController extends Controller
     {
         $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
-        if ($keyword) {
+        /* if ($keyword) {
             $items = (new ItemModel())->search();
         } else {
             // 查询所有内容，并按倒序排列输出
@@ -19,7 +19,8 @@ class ItemController extends Controller
             
             $items = (new ItemModel)->search();
             
-        }
+        } */
+        $items = array("showname"=>"欢迎使用showname签到接口");
 
         $this->output($items);
         
