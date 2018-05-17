@@ -1,7 +1,7 @@
 注释：{{}}里面的内容是参数，需要赋值的
 
 验证用户身份接口：
-https://showname.yixinping.top/showname/index.php?c=user_wechat&m=in_user&code={{微信登录返回的接口}}
+https://showname.yixinping.top/showname/index.php?c=user_wechat&m=in_openid&code={{微信登录返回的接口}}
 调用这个接口需要post传递一个参数 avatar : {{微信头像链接}}  （如果传递了参数还是报错就我告诉我，这个我还没做测试）
 成功则返回{'id':***,'openid':***,'isok':true}
 

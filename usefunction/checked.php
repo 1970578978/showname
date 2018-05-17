@@ -26,16 +26,23 @@ class checked {
             $r_mesg['errMsg'][1] = '签到口令不正确';
         }
         
-        //检查经纬度的精度是不是合要求
-        $long_1 = explode(".",$long);
-        $lat_1 = explode(".",$lat);
-
-        if(strlen($long_1[1])<3 && !is_float($long)){
-            $r_mesg['errMsg'][2] = '经度参数不够精确或者不是经度';
+        //检查经纬度的精度是不是合要求 
+        if(is_float($long)){
+            $long_1 = explode(".",$long);
+            if(strlen($long_1[1])<3){
+                $r_mesg['errMsg'][2] = '经度参数不够精确';
+            }
+        }else{
+            $r_mesg['errMsg'][2] = '经度参数不是经度';
         }
 
-        if(strlen($lat_1[1])<3 && !is_float($lat)){
-            $r_mesg['errMsg'][3] = '纬度参数不够精确或者不是纬度';
+        if(is_float($lat)){
+            $lat_1 = explode(".",$lat);
+            if(strlen($lat_1[1])<3){
+                $r_mesg['errMsg'][3] = '纬度参数不够精确';
+            }
+        }else{
+            $r_mesg['errMsg'][3] = '纬度参数不是纬度';
         }
 
         return $r_mesg;

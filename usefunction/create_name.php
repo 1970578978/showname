@@ -87,19 +87,28 @@ class create_name {
         }
 
         //去小数位后检测经度
-        $long = explode(".",$p_long);
-        $lat = explode(".",$p_lat);
+        
 
-        if(strlen($long[1])<3 && !is_float($p_long)){
-            $r_checkmsg['errMsg'][3] = '经度参数不够精确或者不是经度';
+        if(is_float($p_long)){
+            $long = explode(".",$p_long);
+            if(strlen($long[1])<3){
+                $r_checkmsg['errMsg'][3] = '经度参数不够精确';
+            }else{
+                $r_checkmsg['longitude'] = $p_long;
+            }
         }else{
-            $r_checkmsg['longitude'] = $p_long;
+            $r_checkmsg['errMsg'][3] = '经度参数不是经度';
         }
 
-        if(strlen($lat[1])<3 && !is_float($p_lat)){
-            $r_checkmsg['errMsg'][4] = '纬度参数不够精确或者不是纬度';
+        if(is_float($p_lat)){
+            $lat = explode(".",$p_lat);
+            if(strlen($lat[1])<3){
+                $r_checkmsg['errMsg'][4] = '纬度参数不够精确';
+            }else{
+                $r_checkmsg['latitude'] = $p_lat;
+            }
         }else{
-            $r_checkmsg['latitude'] = $p_lat;
+            $r_checkmsg['errMsg'][4] = '纬度参数不是纬度';
         }
 
         return $r_checkmsg;
