@@ -66,15 +66,15 @@ class create_name {
         }
 
         //检测说明的位数
-        if(mb_strlen($p_in)>20 && empty($p_in)){
-            $r_checkmsg['errMsg'][1] = '填写课程超过20个字';
+        if(mb_strlen($p_in)>20 || empty($p_in)){
+            $r_checkmsg['errMsg'][1] = '填写课程超过20个字或者没有传递参数';
         }else{
             $r_checkmsg['instructions'] = $p_in;
         }
 
         //检测详情的参数
-        if(mb_strlen($p_det)>50 && empty($p_det)){
-            $r_checkmsg['errMsg'][5] = '填写的说明超过50个字';
+        if(mb_strlen($p_det)>50 || empty($p_det)){
+            $r_checkmsg['errMsg'][5] = '填写的说明超过50个字或者没有传递参数';
         }else{
             $r_checkmsg['details'] = $p_det;
         }
