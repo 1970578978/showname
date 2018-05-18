@@ -1,5 +1,5 @@
 <?php
-$url = $_SERVER['REQUEST_URI'];
+/* $url = $_SERVER['REQUEST_URI'];
 $position = strpos($url, '?');
 $url = $position === false ? $url : substr($url, $position);
 var_dump($position);
@@ -30,4 +30,5 @@ $url = trim($url, '?');
         }
         var_dump($controllerName);
         var_dump($actionName);
-        var_dump($param);
+        var_dump($param); */
+

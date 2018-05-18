@@ -22,7 +22,7 @@ class checked {
             $r_mesg['errMsg'][0] = 'id格式不正确';
         }
 
-        if(mb_strlen($pawd)>4 && mb_strlen($pawd)!=strlen($pawd)){
+        if(mb_strlen($pawd)>4 || mb_strlen($pawd)!=strlen($pawd) || empty($pawd)){
             $r_mesg['errMsg'][1] = '签到口令不正确';
         }
         

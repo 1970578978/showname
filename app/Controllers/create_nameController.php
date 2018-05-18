@@ -23,7 +23,7 @@ class Create_nameController extends Controller {
      * 
      * @return 正常输出实列id 签到口令和状态码
      */
-    public function create($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat){
+    public function create($p_id="",$p_in="",$p_det="",$p_num="",$p_long="",$p_lat=""){
         
         $r_msg = array();
         //url偏码问题

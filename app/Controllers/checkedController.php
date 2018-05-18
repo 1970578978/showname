@@ -19,7 +19,7 @@ class CheckedController extends Controller {
      * @param $lat 签到者纬度
      * 
      */
-    public function showname($u_id,$pawd,$long,$lat){
+    public function showname($u_id="",$pawd="",$long="",$lat=""){
 
         $chk_obj = new checked;
         $chkM_obj = new checkedModel;

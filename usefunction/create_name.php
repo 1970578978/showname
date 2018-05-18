@@ -66,14 +66,14 @@ class create_name {
         }
 
         //检测说明的位数
-        if(mb_strlen($p_in)>20){
+        if(mb_strlen($p_in)>20 && empty($p_in)){
             $r_checkmsg['errMsg'][1] = '填写课程超过20个字';
         }else{
             $r_checkmsg['instructions'] = $p_in;
         }
 
         //检测详情的参数
-        if(mb_strlen($p_det)>50){
+        if(mb_strlen($p_det)>50 && empty($p_det)){
             $r_checkmsg['errMsg'][5] = '填写的说明超过50个字';
         }else{
             $r_checkmsg['details'] = $p_det;
@@ -89,7 +89,7 @@ class create_name {
         //去小数位后检测经度
         
 
-        if(is_float($p_long)){
+        if(is_float($p_long) && !empty($p_long)){
             $long = explode(".",$p_long);
             if(strlen($long[1])<3){
                 $r_checkmsg['errMsg'][3] = '经度参数不够精确';
@@ -100,7 +100,7 @@ class create_name {
             $r_checkmsg['errMsg'][3] = '经度参数不是经度';
         }
 
-        if(is_float($p_lat)){
+        if(is_float($p_lat) && !empty($p_lat)){
             $lat = explode(".",$p_lat);
             if(strlen($lat[1])<3){
                 $r_checkmsg['errMsg'][4] = '纬度参数不够精确';
