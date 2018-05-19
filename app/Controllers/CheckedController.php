@@ -35,7 +35,7 @@ class CheckedController extends Controller {
         }
 
         //检测用户id和openid是不是对应关系
-        $is_user = $creM_obj->check_user($u_id,$openid);
+        $is_user = $chkM_obj->check_user($u_id,$openid);
         if(array_key_exists('errMsg',$is_user)){
             $is_user['isok'] = false;
             $this->output($is_user);

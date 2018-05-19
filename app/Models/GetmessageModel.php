@@ -24,6 +24,7 @@ class GetmessageModel extends Model {
      */
     public function slc_userMessage($id){
         $sw_user = array("*"=>$id);
-        
+        $user_message = $this->select_all($this->table,array('*'),$sw_user);
+        return $user_message[0];
     }
 }
