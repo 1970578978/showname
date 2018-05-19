@@ -78,7 +78,10 @@ class Fastphp
             exit($actionName . '方法不存在');
         }
         
-        
+        foreach($param as $k=>$value){
+            $param[$k] = urldecode($value);
+        }
+
         // 如果控制器和操作名存在，则实例化控制器，因为控制器对象里面
         // 还会用到控制器名和操作名，所以实例化的时候把他们俩的名称也
         // 传进去。结合Controller基类一起看

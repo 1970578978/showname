@@ -29,8 +29,8 @@ class Create_nameController extends Controller {
         
         $r_msg = array();
         //url偏码问题
-        $p_in = urldecode($p_in);
-        $p_det = urldecode($p_det);
+        /* $p_in = urldecode($p_in);
+        $p_det = urldecode($p_det); */
         
         //把要用的通用方法实列话
         $cre_obj = new create_name;

@@ -33,7 +33,7 @@ class Ch_perinforController extends Controller {
         $this->check_err($c_msg);
 
         //检测账号是不是正确
-        $is_user = $creM_obj->check_user($id,$openid);
+        $is_user = $chkM_obj->check_user($id,$openid);
         $this->check_err($is_user);
 
         //更改数据库
@@ -41,7 +41,7 @@ class Ch_perinforController extends Controller {
 
         $r_msg['isok'] = true;
         
-        return $r_msg;
+        $this->output($r_msg);
 
     }
 }
