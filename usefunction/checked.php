@@ -27,7 +27,7 @@ class checked {
         }
         
         //检查经纬度的精度是不是合要求 
-        if(is_float($long)){
+        if(strpos($long,".")){
             $long_1 = explode(".",$long);
             if(strlen($long_1[1])<3){
                 $r_mesg['errMsg'][2] = '经度参数不够精确';
@@ -36,7 +36,7 @@ class checked {
             $r_mesg['errMsg'][2] = '经度参数不是经度';
         }
 
-        if(is_float($lat)){
+        if(strpos($lat,".")){
             $lat_1 = explode(".",$lat);
             if(strlen($lat_1[1])<3){
                 $r_mesg['errMsg'][3] = '纬度参数不够精确';

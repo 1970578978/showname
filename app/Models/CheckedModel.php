@@ -64,9 +64,10 @@ class checkedModel extends Model {
      * 查找签到者个人信息是不是完整
      * 
      * @param $u_id 用户表的主键
+     * @param $all_checked 是否检查账号其他信息
      * @return array 签到者的个人信息完整程度
      */
-    public function slc_user($u_id){
+    public function slc_user($u_id,$all_checked){
         $sw_user = array("id"=>$u_id);
 
         $sr_user = $this->select_all("user_wechat",array("*"),$sw_user);
@@ -75,12 +76,22 @@ class checkedModel extends Model {
             $r_msg['errMsg'] = '用户查找不到';
             $r_msg['isok'] = false;
         }else{
-            if(empty($sr_user[0]['name'])){
-                $r_msg['errMsg'] = '用户信息不完整';
-                $r_msg['isok'] = false;
+            if(!empty($all_checked)){
+                if(empty($sr_user[0]['name'])){
+                    $r_msg['errMsg'] = '用户信息不完整';
+                    $r_msg['isok'] = false;
+                }else{
+                    $r_msg['msg'] = $sr_user[0];
+                    $r_msg['isok'] = true;
+                }
             }else{
-                $r_msg['msg'] = $sr_user[0];
-                $r_msg['isok'] = true;
+                if(empty($sr_user[0]['name']) || empty($sr_user[0]['school']) || empty($sr_user[0]['scholar'])){
+                    $r_msg['errMsg'] = '用户信息不完整';
+                    $r_msg['isok'] = false;
+                }else{
+                    $r_msg['msg'] = $sr_user[0];
+                    $r_msg['isok'] = true;
+                }
             }
         }
 

@@ -54,7 +54,7 @@ class create_name {
      * @param $p_lat 签到者的纬度
      * @return 规范就返回数据组合的数组方便插进数据库，不规范就返回errMsg
      */
-    public function check_data($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat){
+    public function check_data($p_id,$openid,$p_in,$p_det,$p_num,$p_long,$p_lat){
         $r_checkmsg = array();
 
         //检测id参数
@@ -63,6 +63,11 @@ class create_name {
 
         }else{
             $r_checkmsg['errMsg'][0] = "传的id参数不是数字";
+        }
+
+        //检测openid参数
+        if(empty($openid)){
+            $r_checkmsg['errMsg'][6] = 'openid参数不能为空';
         }
 
         //检测说明的位数
@@ -89,7 +94,7 @@ class create_name {
         //去小数位后检测经度
         
 
-        if(is_float($p_long) && !empty($p_long)){
+        if(strpos($p_long,".") && !empty($p_long)){
             $long = explode(".",$p_long);
             if(strlen($long[1])<3){
                 $r_checkmsg['errMsg'][3] = '经度参数不够精确';
@@ -100,7 +105,7 @@ class create_name {
             $r_checkmsg['errMsg'][3] = '经度参数不是经度';
         }
 
-        if(is_float($p_lat) && !empty($p_lat)){
+        if(strpos($p_lat,".") && !empty($p_lat)){
             $lat = explode(".",$p_lat);
             if(strlen($lat[1])<3){
                 $r_checkmsg['errMsg'][4] = '纬度参数不够精确';

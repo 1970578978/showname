@@ -10,7 +10,7 @@ https://showname.yixinping.top/showname/index.php?c=create_name&m=create&p1={{�
 成功则返回{'name_id':***,'password':'签到口令','isok':true}
 
 签到接口：
-https://showname.yixinping.top/showname/index.php?c=checked&m=showname&p1={{验证用户身份接口返回的id}}&p2={{签到口令}}&p3={{经度}}&p4={{纬度}}
+https://showname.yixinping.top/showname/index.php?c=checked&m=showname&p1={{验证用户身份接口返回的id}}&p2={{签到口令}}&p3={{经度}}&p4={{纬度}}$p5={{不检查学校等其他信息(只要传一个参数就不检查)}}
 成功则返回{'name_id':***,'checked_id':***,'isok':true}
 
 

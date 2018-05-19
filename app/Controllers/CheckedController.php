@@ -19,7 +19,7 @@ class CheckedController extends Controller {
      * @param $lat 签到者纬度
      * 
      */
-    public function showname($u_id="",$pawd="",$long="",$lat=""){
+    public function showname($u_id="",$pawd="",$long="",$lat="",$all_check=""){
 
         $chk_obj = new checked;
         $chkM_obj = new checkedModel;
@@ -33,7 +33,7 @@ class CheckedController extends Controller {
         }
 
         //查找个人信息是不是完整 只对name做了要求
-        $usr_msg = $chkM_obj->slc_user($u_id);
+        $usr_msg = $chkM_obj->slc_user($u_id,$all_check);
         if(!$usr_msg['isok']){
             $this->output($usr_msg);
             die;

@@ -59,4 +59,5 @@ class create_nameModel extends Model {
         return $r_check;
 
     }
+
 }

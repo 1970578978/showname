@@ -25,4 +25,19 @@ class Model extends Sql
             $this->table = strtolower($this->model);
         }
     }
+
+    /**
+     * 检测id和对应的openid是不是相等
+     * 
+     * 
+     */
+    public function check_user($id,$openid){
+        $r_msg = array();
+        $sc_user = array("id"=>$id,"wechat_num"=>$openid);
+        $sr_user = $this->select_all('user_wechat',array("*"),$sc_user);
+        if(empty($sr_user)){
+            $r_msg['errMsg'] = 'id和openid对应关系不对';
+        }
+        return $r_msg;
+    }
 }

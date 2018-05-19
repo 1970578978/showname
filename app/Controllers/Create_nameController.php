@@ -23,7 +23,7 @@ class Create_nameController extends Controller {
      * 
      * @return 正常输出实列id 签到口令和状态码
      */
-    public function create($p_id="",$p_in="",$p_det="",$p_num="",$p_long="",$p_lat=""){
+    public function create($p_id="",$openid="",$p_in="",$p_det="",$p_num="",$p_long="",$p_lat=""){
         
         $r_msg = array();
         //url偏码问题
@@ -34,7 +34,7 @@ class Create_nameController extends Controller {
         $creM_obj = new create_nameModel;
 
         //检测参数格式是不是正确
-        $ic_checkmsg = $cre_obj->check_data($p_id,$p_in,$p_det,$p_num,$p_long,$p_lat);
+        $ic_checkmsg = $cre_obj->check_data($p_id,$openid,$p_in,$p_det,$p_num,$p_long,$p_lat);
 
         if(array_key_exists('errMsg',$ic_checkmsg)){
             //存在错误就输出来并终止程序的运行
@@ -43,6 +43,14 @@ class Create_nameController extends Controller {
             die;
         }
 
+
+        //检测账号的问题
+        $is_user = $creM_obj->check_user($p_id,$openid);
+        if(array_key_exists('errMsg',$is_user)){
+            $is_user['isok'] = false;
+            $this->output($is_user);
+            die;
+        }
 
         //用循环检测的方式检测口令是不是可用
         while(true){
