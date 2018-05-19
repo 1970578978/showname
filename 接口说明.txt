@@ -1,17 +1,20 @@
 注释：{{}}里面的内容是参数，需要赋值的
 
 验证用户身份接口：
-https://showname.yixinping.top/showname/index.php?c=user_wechat&m=in_openid&code={{微信登录返回的接口}}
+https://showname.yixinping.top/showname/index.php?c=user_wechat&m=in_openid&code={{微信登录返回的接口}}&p2={{openid}}
 调用这个接口需要post传递一个参数 avatar : {{微信头像链接}}  （如果传递了参数还是报错就我告诉我，这个我还没做测试）
 成功则返回{'id':***,'openid':***,'isok':true}
 
 创建签到实列接口：
-https://showname.yixinping.top/showname/index.php?c=create_name&m=create&p1={{调用上面这个接口返回的id}}&pr={{openid}}&p2={{课程名称}}&p3={{班级记录}}&p4={{应到人数}}&p5={{经度}}&p6={{纬度}}
+https://showname.yixinping.top/showname/index.php?c=create_name&m=create&p1={{调用上面这个接口返回的id}}&p2={{openid}}&pr={{openid}}&p2={{课程名称}}&p3={{班级记录}}&p4={{应到人数}}&p5={{经度}}&p6={{纬度}}
 成功则返回{'name_id':***,'password':'签到口令','isok':true}
 
 签到接口：
 https://showname.yixinping.top/showname/index.php?c=checked&m=showname&p1={{验证用户身份接口返回的id}}&p2={{签到口令}}&p3={{经度}}&p4={{纬度}}$p5={{不检查学校等其他信息(只要传一个参数就不检查)}}
 成功则返回{'name_id':***,'checked_id':***,'isok':true}
+
+更改个人信息接口
+https://showname.yixinping.top/showname/index.php?c=Ch_perinfor&m=change_prinfo&p1={{id}}&p2={{openid}}&p3={{学校}}&p4={{学号}}&p5={{姓名}}&p6={{班级}}
 
 
 以上接口运行失败都会返回{'errMsg':****,'isok':false} (如果出现其他的是代码存在bug，请立马通知我)

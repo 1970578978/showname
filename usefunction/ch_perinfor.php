@@ -1,5 +1,5 @@
 <?php
-namespace ch_perinfor;
+namespace usefunction;
 
 /**
  * 更改用户信息时要用的一些通用方法
