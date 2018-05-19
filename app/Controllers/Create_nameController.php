@@ -9,6 +9,8 @@ use usefunction\create_name;
 /**
  * 创建签到实列接口控制器
  * 包含创建方法create
+ * 
+ * @method create 创建签到的接口
  */
 class Create_nameController extends Controller {
     
@@ -28,6 +30,7 @@ class Create_nameController extends Controller {
         $r_msg = array();
         //url偏码问题
         $p_in = urldecode($p_in);
+        $p_det = urldecode($p_det);
         
         //把要用的通用方法实列话
         $cre_obj = new create_name;
@@ -35,7 +38,6 @@ class Create_nameController extends Controller {
 
         //检测参数格式是不是正确
         $ic_checkmsg = $cre_obj->check_data($p_id,$openid,$p_in,$p_det,$p_num,$p_long,$p_lat);
-
         if(array_key_exists('errMsg',$ic_checkmsg)){
             //存在错误就输出来并终止程序的运行
             $ic_checkmsg['errMsg']['isok'] = false;

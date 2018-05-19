@@ -4,6 +4,14 @@ namespace app\Models;
 use fastFrame\base\Model;
 use fastFrmae\db\Db;
 
+/**
+ * 实现签到的模型
+ * 
+ * @method slc_name 通过签到口令查找签到实列
+ * @method is_checked 判断用户是不是已经签过到了
+ * @method slc_user 查找用户信息是不是完整
+ * @method checked 插入数据库实现签到
+ */
 class checkedModel extends Model {
 
     /**

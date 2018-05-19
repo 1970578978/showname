@@ -25,6 +25,20 @@ class Controller
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * 输出错误信息的通用方法
+     * 
+     * @param $errarry
+     * @return 输出错误信息
+     */
+    public function check_err($errarry){
+        if(array_key_exists('errMsg',$errarry)){
+            $errarry['isok'] = false;
+            $this->output($errarry);
+            die;
+        }
+    }
+
     // 渲染视图
     
 }

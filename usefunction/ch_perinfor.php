@@ -14,7 +14,7 @@ class ch_perinfor {
      * @param $name 姓名
      * @param $class_num 班级
      */
-    public function check_data($id,$school,$scholar,$name,$class_num){
+    public function check_data($id,$openid,$school,$scholar,$name,$class_num){
         $r_mesg =array();
 
         //检测id主键格式
@@ -22,6 +22,11 @@ class ch_perinfor {
 
         }else{
             $r_mesg['errMsg'][0] = 'id格式不正确';
+        }
+
+        //检测openid
+        if(empty($openid)){
+            $r_mesg['errMsg'][5] = 'openid参数不能为空';
         }
 
         //检测学校名称

@@ -8,6 +8,8 @@ use usefunction\checked;
 /**
  * 签到接口控制器
  * 实现签到记录方法
+ * 
+ * @method showname进行签到的接口
  */
 class CheckedController extends Controller {
     /**
@@ -19,16 +21,24 @@ class CheckedController extends Controller {
      * @param $lat 签到者纬度
      * 
      */
-    public function showname($u_id="",$pawd="",$long="",$lat="",$all_check=""){
+    public function showname($u_id="",$openid='',$pawd="",$long="",$lat="",$all_check=""){
 
         $chk_obj = new checked;
         $chkM_obj = new checkedModel;
 
         //先检查参数格式是不是正确
-        $c_msg = $chk_obj->check_data($u_id,$pawd,$long,$lat);
+        $c_msg = $chk_obj->check_data($u_id,$openid,$pawd,$long,$lat);
         if(array_key_exists('errMsg',$c_msg)){
             $c_msg['isok'] = false;
             $this->output($c_msg);
+            die;
+        }
+
+        //检测用户id和openid是不是对应关系
+        $is_user = $creM_obj->check_user($u_id,$openid);
+        if(array_key_exists('errMsg',$is_user)){
+            $is_user['isok'] = false;
+            $this->output($is_user);
             die;
         }
 

@@ -6,7 +6,7 @@ https://showname.yixinping.top/showname/index.php?c=user_wechat&m=in_openid&code
 成功则返回{'id':***,'openid':***,'isok':true}
 
 创建签到实列接口：
-https://showname.yixinping.top/showname/index.php?c=create_name&m=create&p1={{调用上面这个接口返回的id}}&p2={{课程名称}}&p3={{班级记录}}&p4={{应到人数}}&p5={{经度}}&p6={{纬度}}
+https://showname.yixinping.top/showname/index.php?c=create_name&m=create&p1={{调用上面这个接口返回的id}}&pr={{openid}}&p2={{课程名称}}&p3={{班级记录}}&p4={{应到人数}}&p5={{经度}}&p6={{纬度}}
 成功则返回{'name_id':***,'password':'签到口令','isok':true}
 
 签到接口：

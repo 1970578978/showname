@@ -6,6 +6,8 @@ use fastFrmae\db\Db;
 
 /**
  * 把微信账号和个人信息相互绑定插入
+ * 
+ * @method in_user完成注册（把数据插入数据库）的方法
  */
 class user_wechatModel extends Model {
 

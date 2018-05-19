@@ -8,6 +8,8 @@ use usefunction\openidWay;
 /**
  * 建立用户变的接口控制器
  * 包含用openid创建方法用户方法 in_openid
+ * 
+ * @method in_openid类似于注册的接口
  */
 class User_wechatController extends Controller {
 

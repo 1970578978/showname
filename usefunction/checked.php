@@ -13,13 +13,18 @@ class checked {
      * @param $lat 纬度
      * @return array 检查的一些错误信息，如果没有就是空数组
      */
-    public function check_data($u_id,$pawd,$long,$lat){
+    public function check_data($u_id,$openid,$pawd,$long,$lat){
         $r_mesg =array();
 
         if(is_numeric($u_id)){
 
         }else{
             $r_mesg['errMsg'][0] = 'id格式不正确';
+        }
+
+        //检测openid参数
+        if(empty($openid)){
+            $r_mesg['errMsg'][4] = 'openid参数不能为空';
         }
 
         if(mb_strlen($pawd)>4 || mb_strlen($pawd)!=strlen($pawd) || empty($pawd)){

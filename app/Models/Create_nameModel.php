@@ -7,6 +7,9 @@ use fastFrmae\db\Db;
 /**
  * 关于签到实列的操作
  * 创建一个发起签到实列
+ * 
+ * @method create 创建签到实列
+ * @method check_paswd 查找签到口令是不是存在
  */
 class create_nameModel extends Model {
 
