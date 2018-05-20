@@ -1,5 +1,5 @@
 <?php
-namespace ch_perinfor;
+namespace usefunction;
 
 /**
  * 获取信息接口要用的通用方法
@@ -29,5 +29,23 @@ class getmessage {
 
         return $r_checkmsg;
 
+    }
+
+    /**
+     * 检查获取签到者个人信息参数
+     * @param nameid 参数id
+     * @return 不规范就返回errmsg
+     */
+    public function checkChecked_msg($nameid){
+        $r_checkmsg = array();
+
+        //检查id
+        if(is_numeric($nameid)){
+
+        }else{
+            $r_checkmsg['errMsg'][0] = 'id格式不正确';
+        }
+
+        return $r_checkmsg;
     }
 }

@@ -37,6 +37,25 @@ class GetmessageController extends Controller {
     }
 
     /**
-     * 查找
+     * 查找签到的其他签到人的信息
+     * 
+     * @param $name_id 主键
+     * @param $openid 唯一标示符
+     * @param $data
      */
+    public function username_data($name_id=""){
+
+        //检测name——id是不是规范
+        $cre_obj = new getmessage;
+        $creM_obj = new GetmessageModel;
+
+        //检测参数是不是规范
+        $c_checkmsg = $cre_obj->checkChecked_msg($name_id);
+        $this->check_err($c_checkmsg);
+
+        //查找信息
+        $checked_msg = $creM_obj->slc_checkedMessage($name_id);
+
+        $this->output($checked_msg);
+    }
 }

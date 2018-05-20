@@ -23,8 +23,31 @@ class GetmessageModel extends Model {
      * @return 查找出来的用户信息
      */
     public function slc_userMessage($id){
-        $sw_user = array("*"=>$id);
+        $sw_user = array("id"=>$id);
         $user_message = $this->select_all($this->table,array('*'),$sw_user);
+        unset($user_message[0]['session_key']);
         return $user_message[0];
+    }
+
+
+    /**
+     * 从数据库里面找出签到者信息
+     * @param $nameid 签到实列id
+     * @return 签到用户信息
+     */
+    public function slc_checkedMessage($nameid){
+        //先查找签到表 表签到时候的个人信息取出来
+        $sw_checked = array("name_id"=>$nameid);
+        $checked_message = $this->select_all("checked",array('*'),$sw_checked);
+
+        foreach($checked_message as $key=>$value){
+            $sw_user = array('id'=>$value['u_id']);
+            $user_avatar = $this->select_all("user_wechat",array('avatar'),$sw_user);
+            $checked_message[$key]['avatar'] = $user_avatar[0]['avatar'];
+
+        }
+        
+        return $checked_message;
+        
     }
 }
