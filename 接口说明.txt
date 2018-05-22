@@ -16,5 +16,14 @@ https://showname.yixinping.top/showname/index.php?c=checked&m=showname&p1={{验�
 更改个人信息接口
 https://showname.yixinping.top/showname/index.php?c=Ch_perinfor&m=change_prinfo&p1={{id}}&p2={{openid}}&p3={{学校}}&p4={{学号}}&p5={{姓名}}&p6={{班级}}
 
+获取个人信息接口
+https://showname.yixinping.top/showname/?c=getmessage&m=username_data&p1={{id}}&p2={{openid}};
+
+获取签到者信息接口
+https://showname.yixinping.top/showname/?c=getmessage&m=username_data&p1={{id}}；
+
+获取发起历史信息信息
+https://showname.yixinping.top/showname/?c=getmessage&m=getmonthDay&p1={{u_id(登录借口返回的id)}}&p2={{openid}}&p3={{年}}&p4={{月}}&p6={{日}}（年月日都是数字形式）
+注：不传年月日参数就获取当天的数据
 
 以上接口运行失败都会返回{'errMsg':****,'isok':false} (如果出现其他的是代码存在bug，请立马通知我)

@@ -130,6 +130,10 @@ class checkedModel extends Model {
 
         $checked = $this->insert($this->table,$ic_checked);
 
+        //更新数据库name的签到次数
+        $sql_add = "UPDATE create_name set num_arrivals=num_arrivals+1 where id=$name_id";
+        $this->prepareSql($sql_add);
+
         if(is_numeric($checked)){
             return $checked;
         }else{

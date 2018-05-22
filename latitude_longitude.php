@@ -18,6 +18,6 @@ function getdistance($lng1, $lat1, $lng2, $lat2) {
     $s = 2 * asin(sqrt(pow(sin($a / 2), 2) + cos($radLat1) * cos($radLat2) * pow(sin($b / 2), 2))) * 6378.137 * 1000;
     return $s;
 } 
-echo getdistance(113.083784,28.183018,113.073784,28.183018);
+echo getdistance(113.07843,28.183424,113.07881,28.184465);
 
 echo urldecode('%E9%AB%98%E6%95%B0');

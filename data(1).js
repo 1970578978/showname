@@ -20,6 +20,22 @@ var NowDates =
 
       ]}
   ];
+
+  var NowDates =
+    [ 
+        {spaceNum: 6, year: 2018, month: 5, day: 22, monthNum: 31},
+        {theDayBool:[
+            true,true,true,false,false,false,false,true,true,false,false,true,false,false,false,
+            false,true,false,false,false,true,true
+        ]},
+        {theDayRecords: [
+            { time: '8:20:00', majorNames: "安工一班，环科一班，农资三班", signedNum: 80, studentsNum: 82}, {time: '19:40:00', majorNames: "园艺三班，园艺四班", signedNum: 82, studentsNum: 82}
+        ]}
+    ];
+module.exports = {
+    NowDates: NowDates
+}
+
 //下面不要管⬇⬇⬇⬇⬇⬇⬇
 module.exports = {
   NowDates: NowDates

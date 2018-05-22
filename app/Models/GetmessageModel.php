@@ -50,4 +50,23 @@ class GetmessageModel extends Model {
         return $checked_message;
         
     }
+
+    /**
+     * 查找某月的某一天是不是有数据
+     * @param $id userid
+     * @param $year 
+     * @param $month
+     * @param $day
+     */
+    public function slc_onedayData($id,$year,$month,$day){
+        //用sql语句进行查找
+        $slc_sqloneday = "SELECT * FROM create_name where year(createtime)=$year and month(createtime)=$month and day(createtime)=$day and u_id=$id";
+        $oneday_msg = $this->select_sql($slc_sqloneday);
+
+        if(empty($oneday_msg)){
+            return false;
+        }else{
+            return $oneday_msg;
+        }
+    }
 }

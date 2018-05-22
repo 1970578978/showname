@@ -32,3 +32,18 @@ $url = trim($url, '?');
         var_dump($actionName);
         var_dump($param); */
 
+       
+        $stime = strtotime("2018-5-1");
+        $week2 = date("w",$stime);
+        
+        $monthd = date("t",$stime);
+
+        date_default_timezone_set("PRC");
+        $nowtime = date("Y.m.d",time());
+        
+        $dateArray = explode(".",$nowtime);
+        $year = (int)$dateArray[0];
+        $month = (int)$dateArray[1];
+        $day = (int)$dateArray[2];
+        var_dump(is_numeric($month));
+        
