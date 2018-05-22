@@ -92,8 +92,8 @@ class getmessage {
         //0表示星期天，1表示星期一
         $week = date("w",$d);
         //组合一个月有多少天
-        $monthd = date("t",$d);
-        
+        $monthd = (int)date("t",$d);
+    
         //计算空格值
         if($week == 0){
             $spaceNum = 6;
@@ -107,9 +107,9 @@ class getmessage {
         //以小数点的形式分开年月日
         $dateArray = explode(".",$nowtime);
         if($dateArray[0] == $year && $dateArray[1] == $month){
-            $day = $dateArray[2];
+            $day = (int)$dateArray[2];
         }else{
-            $day = $monthd;
+            $day = (int)$monthd;
         }
 
         $r_msg = array("spaceNum"=>$spaceNum,"year"=>$year,"month"=>$month,"day"=>$day,"monthNum"=>$monthd);
