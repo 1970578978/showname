@@ -88,6 +88,10 @@ class getmessage {
      * @return 返回的数据格式
      */
     public function getoneData($year,$month){
+        //整形
+        $year = (int)$year;
+        $month = (int)$month;
+        
         $d = mktime(0,12,30,$month,1,$year);
         //0表示星期天，1表示星期一
         $week = date("w",$d);

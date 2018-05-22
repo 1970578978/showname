@@ -117,8 +117,8 @@ class GetmessageController extends Controller {
                 $ctime = str_replace(array(" ",$replacetime,"\n","\r","\r\n"),"",$value['createtime']);
                 $simple_msg[$key]['time'] = $ctime;
                 $simple_msg[$key]['majorNames'] = $value['details'];
-                $simple_msg[$key]['signedNum'] = $value['num_should'];
-                $simple_msg[$key]['studentsNum'] = $value['num_arrivals'];
+                $simple_msg[$key]['signedNum'] = $value['num_arrivals'];
+                $simple_msg[$key]['studentsNum'] = $value['num_should'];
                 $simple_msg[$key]['classname'] = $value['instructions'];
                 $simple_msg[$key]['name_id'] = $value['id'];
             }
