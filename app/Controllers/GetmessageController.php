@@ -97,7 +97,7 @@ class GetmessageController extends Controller {
 
         $dateboolean = array();
         //查找某月的哪些天有发起签到
-        for($i=0;$i<$dateMeg['day']-1;$i++){
+        for($i=0;$i<$dateMeg['day'];$i++){
             $is_msg = $creM_obj->slc_onedayData($id,$year,$month,$i+1);
             if($is_msg){
                 $trueorfalse[$i] = false;
