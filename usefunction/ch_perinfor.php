@@ -51,4 +51,61 @@ class ch_perinfor {
 
         return $r_mesg;
     }
+
+    /**
+     * 检查获取签到者个人信息参数
+     * @param nameid 参数id
+     * @return 不规范就返回errmsg
+     */
+    public function checkChecked_msg($id,$nameid){
+        $r_checkmsg = array();
+
+        
+        //检查id
+        if(is_numeric($id)){
+
+        }else{
+            $r_checkmsg['errMsg'][1] = 'id格式不正确';
+        }
+
+        if(is_numeric($nameid)){
+
+        }else{
+            $r_checkmsg['errMsg'][0] = 'nameid格式不正确';
+        }
+
+        return $r_checkmsg;
+    }
+
+    /**
+     * 检查时间参数是不是符合要求
+     * @param $time
+     * @return array 一些errmsg信息
+     */
+    public function checktime_msg($time){
+        $r_checkmsg = array();
+
+        if(strlen($time) == mb_strlen($time)){
+            if(strpos($time,":")){
+
+            }else{
+                $r_checkmsg['errMsg'][0] = 'time格式不正确';
+            }
+        }else{
+            $r_checkmsg['errMsg'][0] = 'time格式不正确';
+        }
+
+        return $r_checkmsg;
+    }
+
+    /**
+     * 处理时间字符串
+     * @param $time
+     * @return int 时间的秒数
+     */
+    public function change_time($time){
+        $timAry = explode($time,":");
+        $secend = (int)$timAry[0]*60 + (int)$timAry[1];
+        return $secend;
+    }
 }

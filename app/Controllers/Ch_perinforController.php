@@ -44,4 +44,38 @@ class Ch_perinforController extends Controller {
         $this->output($r_msg);
 
     }
+
+    /**
+     * 关闭签到的接口
+     * @param $nameid
+     * @param $time
+     * @return array 一些信息
+     */
+    public function close_name($id="",$nameid="",$time=""){
+        
+        $chk_obj = new ch_perinfor;
+        $chkM_obj = new Ch_perinforModel;
+
+        //检测参数是不是正确
+        $c_msg = $chk_obj->checkChecked_msg($id,$nameid);
+        $this->check_err($c_msg);
+
+        //如果有时间参数
+        if(!empty($time)){
+            $c_msg = $chk_obj->checktime_msg($time);
+            $this->check_err($c_msg);
+            $time = $chk_obj->change_time($time);
+        }
+
+        //检测id和nameid是不是匹配
+        $cid_msg = $chkM_obj->sc_idandnameid($id,$nameid);
+        $this->check_err($cid_msg);
+
+        //更改状态
+        $chkM_obj->up_closename($nameid,$time);
+        
+        $r_msg['isok'] = true;
+        
+        $this->output($r_msg);
+    }
 }

@@ -34,4 +34,42 @@ class Ch_perinforModel extends Model {
 
         $this->update($this->table,$uc_user,$uw_user);
     }
+
+    /**
+     * 查找id和nameid是不是匹配
+     * @param $id
+     * @param $nameid
+     * @return bollean 
+     */
+    public function sc_idandnameid($id,$nameid){
+        $sw_name = array("id"=>$nameid,"u_id"=>$id);
+        $sr_name = $this->select_all("create_name",array("*"),$sw_name);
+
+        if(empty($sr_name)){
+            $r_msg = array("errMsg"=>"你无法更改");
+        }else{
+            $r_msg = array();
+        }
+
+        return $r_msg;
+        
+    }
+
+    /**
+     * 终止签到
+     * @param $nameid
+     * @param $time
+     * @return boolean
+     */
+    public function up_closename($nameid,$time){
+        $uw_name = array("id"=>$nameid);
+
+        if(empty($time)){           
+            $uc_name = array("status"=>0);          
+        }else{
+            $uc_name = array("status"=>0,"time_limit"=>$time);
+        }
+
+        $this->update("create_name",$uc_name,$uw_name);
+    }
 }

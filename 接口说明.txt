@@ -20,11 +20,14 @@ https://showname.yixinping.top/showname/index.php?c=Ch_perinfor&m=change_prinfo&
 https://showname.yixinping.top/showname/?c=getmessage&m=username_data&p1={{id}}&p2={{openid}};
 
 获取签到者信息接口
-https://showname.yixinping.top/showname/?c=getmessage&m=username_data&p1={{id}}；
+https://showname.yixinping.top/showname/?c=getmessage&m=username_data&p1={{name_id}}；
 
 获取发起历史信息信息
 https://showname.yixinping.top/showname/?c=getmessage&m=getmonthDay&p1={{u_id(登录借口返回的id)}}&p2={{openid}}&p3={{年}}&p4={{月}}&p6={{日}}（年月日都是数字形式）
 注：不传年月日参数就获取当天的数据
+
+关闭签到接口
+https://showname.yixinping.top/showname/index.php?c=Ch_perinfor&m=close_name&p1={{id}}&p2={{nameid}}&p3={{时间(暂时不填)}}
 
 
 
