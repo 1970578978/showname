@@ -32,6 +32,11 @@ var NowDates =
             { time: '8:20:00', majorNames: "安工一班，环科一班，农资三班", signedNum: 80, studentsNum: 82}, {time: '19:40:00', majorNames: "园艺三班，园艺四班", signedNum: 82, studentsNum: 82}
         ]}
     ];
+
+    var arrActional = {"isSigning": true, "Shibboleth": "1234", signList: [{proFileUrl: "http://......", uName: "小华", distance: "100米以内", uNumber: "2017404888", uSuccess: true}, {}, {}]}
+//uSuccess: 根据定位距离判断是否在教室、isSigning: 此发起的签到是否已过期、Shibboleth: 口令
+//distance: GPS定位提示信息
+
 module.exports = {
     NowDates: NowDates
 }

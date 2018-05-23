@@ -44,6 +44,8 @@ class GetmessageController extends Controller {
      * @param $data
      */
     public function username_data($name_id=""){
+        $r_msg = array();
+        $rc_msg = array();
 
         //检测name——id是不是规范
         $cre_obj = new getmessage;
@@ -53,10 +55,42 @@ class GetmessageController extends Controller {
         $c_checkmsg = $cre_obj->checkChecked_msg($name_id);
         $this->check_err($c_checkmsg);
 
-        //查找信息
+        //查找这个签到实列的id
+        $name_msg = $creM_obj->slc_nameMsg($name_id);
+
+        //查找签到者信息
         $checked_msg = $creM_obj->slc_checkedMessage($name_id);
 
-        $this->output($checked_msg);
+        //组合数据
+        if($name_msg['status'] == 1){             //是否过期
+            $r_msg['isSigning'] = false;
+        }else{
+            $r_msg['isSigning'] = true;
+        }
+
+        $r_msg['Shibboleth'] = $name_msg['password'];
+        
+        //组合签到者信息
+        if(!empty($checked_msg)){
+            foreach($checked_msg as $key=>$value){
+                $rc_msg[$key]['proFileUrl'] = $value['avatar'];
+                $rc_msg[$key]['uName'] = $value['name'];
+                
+                if($value['mile'] < 150){
+                    $rc_msg[$key]['distance'] = $value['mile']."米";
+                    $rc_msg[$key]['uNumber'] = $value['scholar'];
+                    $rc_msg[$key]['uSuccess'] = true;
+                }else{
+                    $rc_msg[$key]['distance'] = $value['mile']."米(可能不在教室)";
+                    $rc_msg[$key]['uNumber'] = $value['scholar'];
+                    $rc_msg[$key]['uSuccess'] = false;
+                }
+            }
+        }
+
+        $r_msg['signList'] = $rc_msg;
+
+        $this->output($r_msg);
     }
 
     /**

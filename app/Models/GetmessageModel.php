@@ -29,6 +29,19 @@ class GetmessageModel extends Model {
         return $user_message[0];
     }
 
+    /**
+     * 查找签到实列的信息（例如签到口令）
+     * @param $nameid
+     * @return array 找到的信息组成的数组
+     * 
+     */
+    public function slc_nameMsg($nameid){
+        //把有数据都找出来，放在控制器组合
+        $sw_named = array("id"=>$nameid);
+        $name_message = $this->select_all("create_name",array("*"),$sw_named);
+
+        return $name_message[0];
+    }
 
     /**
      * 从数据库里面找出签到者信息
@@ -46,6 +59,7 @@ class GetmessageModel extends Model {
             $checked_message[$key]['avatar'] = $user_avatar[0]['avatar'];
 
         }
+
         
         return $checked_message;
         
