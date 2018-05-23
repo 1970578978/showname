@@ -104,7 +104,7 @@ class ch_perinfor {
      * @return int 时间的秒数
      */
     public function change_time($time){
-        $timAry = explode($time,":");
+        $timAry = explode(":",$time);
         $secend = (int)$timAry[0]*60 + (int)$timAry[1];
         return $secend;
     }
