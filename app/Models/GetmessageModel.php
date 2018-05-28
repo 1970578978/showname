@@ -66,7 +66,7 @@ class GetmessageModel extends Model {
     }
 
     /**
-     * 查找某月的某一天是不是有数据
+     * 查找某月的某一天是不是发起签到有数据
      * @param $id userid
      * @param $year 
      * @param $month
@@ -82,5 +82,25 @@ class GetmessageModel extends Model {
         }else{
             return $oneday_msg;
         }
+    }
+
+    /**
+     * 查找签到者，签到历史记录消息
+     * @param $id
+     * 
+     * @return 查找的签到数据
+     */
+    public function slc_chmsgfromchecked($id){
+        $sw_checked = array("u_id"=>$id);
+        $checked_message = $this->select_all("checked",array('*'),$sw_checked);
+
+        foreach($checked_message as $key=>$value){
+            $sw_named = array("id"=>$value['name_id']);
+            $classname = $this->select_all("create_name",array('instructions'),$sw_named);
+            $checked_message[$key]['classname'] = $classname[0]['instructions'];
+
+        }
+
+        return $checked_message;
     }
 }

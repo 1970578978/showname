@@ -37,6 +37,128 @@ var NowDates =
 //uSuccess: 根据定位距离判断是否在教室、isSigning: 此发起的签到是否已过期、Shibboleth: 口令
 //distance: GPS定位提示信息
 
+data: {
+    SignedRecord: [
+        {
+            YEARTITLE: 2018,
+            MONTHCONTENT: [
+                {
+                    MONTHTITLE: "1月",
+                    DAYCONTENT: [
+                        {
+                            DAYTITLE: "1日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "08:00", className: "线性代数", uSuccess: true },
+                                { TIMETITLE: "10:20", className: "近代历史纲要", uSuccess: true },
+                            ]
+                        },
+                        {
+                            DAYTITLE: "2日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "10:05", className: "高数", uSuccess: false }
+                            ]
+                        },
+                        {
+                            DAYTITLE: "3日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "14:50", className: "英语", uSuccess: true }
+                            ]
+                        }
+                    ]
+                },
+                { MONTHTITLE: "2月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "3月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "4月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "5月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }]
+        },
+        {
+            YEARTITLE: 2018,
+            MONTHCONTENT: [
+                {
+                    MONTHTITLE: "1月",
+                    DAYCONTENT: [
+                        {
+                            DAYTITLE: "1日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "08:00", className: "线性代数", uSuccess: true },
+                                { TIMETITLE: "10:20", className: "近代历史纲要", uSuccess: true },
+                            ]
+                        },
+                        {
+                            DAYTITLE: "2日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "10:05", className: "高数", uSuccess: false }
+                            ]
+                        },
+                        {
+                            DAYTITLE: "3日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "14:50", className: "英语", uSuccess: true }
+                            ]
+                        }
+                    ]
+                },
+                { MONTHTITLE: "2月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "3月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "4月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "5月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }]
+        },
+        {
+            YEARTITLE: 2018,
+            MONTHCONTENT: [
+                {
+                    MONTHTITLE: "1月",
+                    DAYCONTENT: [
+                        {
+                            DAYTITLE: "1日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "08:00", className: "线性代数", uSuccess: true },
+                                { TIMETITLE: "10:20", className: "近代历史纲要", uSuccess: true },
+                            ]
+                        },
+                        {
+                            DAYTITLE: "2日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "10:05", className: "高数", uSuccess: false }
+                            ]
+                        },
+                        {
+                            DAYTITLE: "3日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "14:50", className: "英语", uSuccess: true }
+                            ]
+                        }
+                    ]
+                },
+                { MONTHTITLE: "2月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "3月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "4月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "5月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }]
+        },
+        {
+            YEARTITLE: 2018,
+            MONTHCONTENT: [
+                {
+                    MONTHTITLE: "1月",
+                    DAYCONTENT: [
+                        {
+                            DAYTITLE: "1日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "08:00", className: "线性代数", uSuccess: true },
+                                { TIMETITLE: "10:20", className: "近代历史纲要", uSuccess: true },
+                            ]
+                        },
+                        {
+                            DAYTITLE: "2日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "10:05", className: "高数", uSuccess: false }
+                            ]
+                        },
+                        {
+                            DAYTITLE: "3日",
+                            TIMECONTENT: [
+                                { TIMETITLE: "14:50", className: "英语", uSuccess: true }
+                            ]
+                        }
+                    ]
+                },
+                { MONTHTITLE: "2月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "3月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "4月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }, { MONTHTITLE: "5月", DAYCONTENT: [{ DAYTITLE: "1日", TIMECONTENT: [{ TIMETITLE: "08:00", className: "线性代数", uSuccess: true }] }] }]
+        },
+      
+  ]
+}
+
 module.exports = {
     NowDates: NowDates
 }

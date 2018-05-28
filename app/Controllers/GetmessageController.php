@@ -164,4 +164,27 @@ class GetmessageController extends Controller {
         $r_msg = array($dateMeg,$dateboolean,$detailsArray);
         $this->output($r_msg);
     }
+
+    /**
+     * 得到签到历史记录方法
+     * @param $id
+     * @param 
+     * 
+     * @return 组合的数据类型，按年月日分开
+     */
+    public function getcheckedmsg($id=""){
+
+        //建立模型和通用方法对象
+        $cre_obj = new getmessage;
+        $creM_obj = new GetmessageModel;
+
+        $c_checkmsg = $cre_obj->checkChecked_msg($id);
+        $this->check_err($c_checkmsg);
+
+        //查找签到历史记录
+        $msg_checked = $creM_obj->slc_chmsgfromchecked($id);
+        $r_msg = $cre_obj->dealmsg_checked($msg_checked);
+        
+        $this->output($r_msg);
+    }
 }
