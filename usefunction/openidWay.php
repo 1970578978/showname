@@ -15,4 +15,22 @@ class openidWay {
         $data = json_decode($str, true);
         return $data;
     }
+
+    /**
+     * 检查插入吐槽的参数
+     */
+    public function checkuid($id){
+        $r_checkmsg = array();
+
+        
+        //检查id
+        if(is_numeric($nameid)){
+
+        }else{
+            $r_checkmsg['errMsg'][0] = 'id格式不正确';
+        }
+
+        return $r_checkmsg;
+    
+    }
 }

@@ -72,4 +72,41 @@ class User_wechatController extends Controller {
 
         $this->output($r_data);
     }
+
+
+
+    /**
+     * 插入吐槽和联系方式
+     * 
+     * @param $id
+     * @return 一些错误或者其他什么信息
+     */
+    public function in_spit($id){
+        //检查参数
+        $cre_obj = new openidWay;
+        $creM_obj = new User_wechatModel;
+
+        $c_checkmsg = $cre_obj->checkuid($id);
+        $this->check_err($c_checkmsg);
+
+        if(empty($_POST['LIANXI']) || empty($_POST['TUOCAO'])){
+            $r_data['errMsg'] = '请输入头像链接参数';
+            $r_data['isok'] = false;
+
+            $this->output($r_data);
+            die;
+        }else{
+            $spitid = $creM_obj->in_spit($id,$_POST['TUOCAO'],$_POST['LIANXI']);
+
+            if(is_numeric($spitid)){
+                $r_msg['isok'] = true;
+            }else{
+                $r_msg['errMsg'] = '服务器出错';
+                $r_msg['isok'] = false;
+            }
+
+            $this->output($r_msg);
+        }
+        
+    }
 }

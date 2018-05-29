@@ -48,4 +48,14 @@ class user_wechatModel extends Model {
             return $is_insert[0]['id'];
         }
     }
+
+
+    /**
+     * 把吐槽插入
+     */
+    public function in_spit($id,$spit,$contact){
+        $ic = array("u_id"=>$id,"spit"=>$spit,"contact"=>$contact);
+
+        return $this->insert('spit',$ic);
+    }
 }

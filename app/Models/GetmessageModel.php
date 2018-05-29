@@ -26,6 +26,13 @@ class GetmessageModel extends Model {
         $sw_user = array("id"=>$id);
         $user_message = $this->select_all($this->table,array('*'),$sw_user);
         unset($user_message[0]['session_key']);
+
+        //查找有多少签到和创建签到
+        $checked_message = $this->select_all('checked',array('id'),array("u_id"=>$id));
+        $user_message[0]['num_checked'] = (int)count($checked_message);
+
+        $name_message = $this->select_all('create_name',array('id'),array("u_id"=>$id));
+        $user_message[0]['num_create_name'] = (int)count($name_message);
         return $user_message[0];
     }
 
