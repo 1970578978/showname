@@ -24,7 +24,7 @@ class openidWay {
 
         
         //检查id
-        if(is_numeric($nameid)){
+        if(is_numeric($id)){
 
         }else{
             $r_checkmsg['errMsg'][0] = 'id格式不正确';
