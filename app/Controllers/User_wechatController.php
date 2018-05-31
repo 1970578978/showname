@@ -97,7 +97,8 @@ class User_wechatController extends Controller {
             die;
         }else{
 
-            $json_aray = json_decode($_POST['feedBack']);            
+            $json_aray = json_decode($_POST['feedBack']);
+            var_dump($json_aray);            
             $spitid = $creM_obj->in_spit($id,$json_aray['TUOCAO'],$json_aray['LIANXI']);
 
             if(is_numeric($spitid)){
