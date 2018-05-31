@@ -96,9 +96,18 @@ class User_wechatController extends Controller {
             $this->output($r_data);
             die;
         }else{
-var_dump($_POST['feedBack']);
-            $json_aray = json_decode($_POST['feedBack']);
-            var_dump($json_aray);            
+
+            $json_aray = json_decode($_POST['feedBack'],true);
+
+
+            if(empty($json_aray['TUOCAO']) || empty($json_aray['LIANXI'])){
+                $r_data['errMsg'] = 'json数据格式不正确';
+                $r_data['isok'] = false;
+
+            $this->output($r_data);
+            die;
+            }
+            
             $spitid = $creM_obj->in_spit($id,$json_aray['TUOCAO'],$json_aray['LIANXI']);
 
             if(is_numeric($spitid)){
