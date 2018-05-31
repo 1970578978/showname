@@ -89,14 +89,16 @@ class User_wechatController extends Controller {
         $c_checkmsg = $cre_obj->checkuid($id);
         $this->check_err($c_checkmsg);
 
-        if(empty($_POST['LIANXI']) || empty($_POST['TUOCAO'])){
-            $r_data['errMsg'] = '请输入头像链接参数';
+        if(empty($_POST['feedBack'])){
+            $r_data['errMsg'] = '请输各种像链接参数';
             $r_data['isok'] = false;
 
             $this->output($r_data);
             die;
         }else{
-            $spitid = $creM_obj->in_spit($id,$_POST['TUOCAO'],$_POST['LIANXI']);
+
+            $json_aray = json_decode($_POST['feedBack']);            
+            $spitid = $creM_obj->in_spit($id,$json_aray['TUOCAO'],$json_aray['LIANXI']);
 
             if(is_numeric($spitid)){
                 $r_msg['isok'] = true;
