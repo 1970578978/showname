@@ -29,6 +29,7 @@ class CheckedController extends Controller {
         //先检查参数格式是不是正确
         $c_msg = $chk_obj->check_data($u_id,$openid,$pawd,$long,$lat);
         if(array_key_exists('errMsg',$c_msg)){
+            $errMsg = "";
             //使errmsg对应的值字符串（做到前后统一）
             foreach($c_msg['errMsg'] as $key=>$value){
                 $errMsg .= $value;

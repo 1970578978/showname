@@ -10,6 +10,9 @@ $config['db']['dbname'] = 'showname';
 $config['app']['id'] = 'wx61e83ae457bdbe47';
 $config['app']['secret'] = 'ea5e6db3e1e306ebbb58fd45b1656dca';
 
+//常用数据配置
+$config['commondata']['distance'] = 150;
+
 // 默认控制器和操作名
 $config['defaultController'] = 'Item';
 $config['defaultAction'] = 'index';

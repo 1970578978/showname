@@ -155,6 +155,9 @@ class Fastphp
             define('app_id',$this->config['app']['id']);
             define('app_secret',$this->config['app']['secret']);
         }
+        if($this->config['commondata']){
+            define('CM_distance',$this->config['commondata']['distance']);
+        }
     }
 
     // 自动加载类

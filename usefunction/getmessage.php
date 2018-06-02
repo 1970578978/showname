@@ -149,7 +149,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -159,7 +159,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -174,7 +174,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -184,7 +184,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -205,7 +205,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -215,7 +215,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -230,7 +230,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);
@@ -240,7 +240,7 @@ class getmessage {
                         //细化到一天的数据
                         $time_hour = $small_date[0].":".$small_date[1];
 
-                        if($value['mile'] > 150){
+                        if($value['mile'] > CM_distance){
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>false);
                         }else{
                             $years_data[$year][$month][$day]['TIMECONTENT'][] = array("TIMETITLE"=>$time_hour,"className"=>$value['classname'],"uSuccess"=>true);

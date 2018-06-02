@@ -76,7 +76,7 @@ class GetmessageController extends Controller {
                 $rc_msg[$key]['proFileUrl'] = $value['avatar'];
                 $rc_msg[$key]['uName'] = $value['name'];
                 
-                if($value['mile'] < 150){
+                if($value['mile'] < CM_distance){
                     $rc_msg[$key]['distance'] = $value['mile']."米";
                     $rc_msg[$key]['uNumber'] = $value['scholar'];
                     $rc_msg[$key]['uSuccess'] = true;
